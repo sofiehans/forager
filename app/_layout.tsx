@@ -1,29 +1,42 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { Image } from "react-native";
+import CustomHeader from "@/components/CustomHeader";
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <>
+      <StatusBar style="light" />
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+        <Stack.Screen
+          name="index"
+          options={{
+            header: () => <CustomHeader />,
+            title: "Back"
+          }}
+        />
+        <Stack.Screen
+          name="CameraScreen"
+          options={{
+            headerTitle: '',
+            headerStyle: {
+              backgroundColor: '#1D3836',
+            },
+            headerTintColor: '#FFF8F0',
+          }}
+        />
+        <Stack.Screen
+          name="IdentifyPicture"
+          options={{
+            headerTitle: '',
+            headerStyle: {
+              backgroundColor: '#1D3836',
+            },
+            headerTintColor: '#FFF8F0',
+          }}
+
+        />
       </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    </>
   );
 }

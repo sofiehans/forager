@@ -1,10 +1,15 @@
 {
   "expo": {
-    "name": "forager",
+    "name": "Mushroom Identification",
+    "splash": {
+      "image": "./assets/images/foragerIcon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1D3836"
+    },
     "slug": "forager",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/foragerIcon.png",
     "scheme": "forager",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,15 +18,15 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/foragerIcon.png",
+        "backgroundColor": "#1D3836"
       },
       "edgeToEdgeEnabled": true
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/foragerIcon.png"
     },
     "plugins": [
       "expo-router",
@@ -31,7 +36,7 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#1D3836"
         }
       ]
     ],
