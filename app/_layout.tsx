@@ -36,6 +36,12 @@ export default function RootLayout() {
           }}
 
         />
+        <Stack.Screen
+          name="InformationScreen"
+          options={{
+            header: () => <CustomHeader />,
+          }}
+        />
       </Stack>
     </>
   );

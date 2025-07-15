@@ -2,14 +2,16 @@ import { useLocalSearchParams } from 'expo-router';
 import { Image, View, StyleSheet, Text } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import { ActivityIndicator } from 'react-native';
+import { useRouter } from 'expo-router';
 
 
 export default function IdentifyPicture() {
     const { uri } = useLocalSearchParams();
     const safeUri = Array.isArray(uri) ? uri[0] : uri;
     const [pred, setPred] = useState<string | null>(null);
-    const [confidence, setConfidence] = useState<string | null>(null);
+    const [confidence, setConfidence] = useState<number | null>(null);
     const [loading, setLoading] = useState(true); // Start as true
+    const router = useRouter();
 
 
     useEffect(() => {
@@ -19,6 +21,20 @@ export default function IdentifyPicture() {
 
         runInference();
     }, []);
+
+    useEffect(() => {
+        if (pred !== null && confidence !== null) {
+            console.log('Both values ready:', pred, confidence);
+            router.push({
+                pathname: '/InformationScreen',
+                params: {
+                    prediction: pred,
+                    confidence: confidence.toString(),
+                },
+            });
+        }
+    }, [pred, confidence]);
+
 
     const sendToServer = async (imageUri: string) => {
         setLoading(true);
@@ -41,16 +57,13 @@ export default function IdentifyPicture() {
             });
 
             const result = await response.json();
-            console.log('Server response:', result);
-
             // Update prediction and confidence
             setPred(result.class);
             setConfidence(result.confidence);
+            setLoading(false); // Hide loader when don
 
         } catch (error) {
             console.error('Upload failed:', error);
-        } finally {
-            setLoading(false); // Hide loader when done
         }
 
     };
