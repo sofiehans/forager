@@ -1,8 +1,8 @@
 import Button from '@/components/Button';
 import { Text, View, StyleSheet, Alert } from 'react-native';
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import CameraComponent from '@/components/CameraComponent';
+// import CameraComponent from '@/components/CameraComponent';
 import { SourceTextModule } from 'vm';
 import { Link, useRouter } from 'expo-router';
 

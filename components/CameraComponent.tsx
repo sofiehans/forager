@@ -1,14 +1,17 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { TouchableOpacity, View, Button, Image, StyleSheet, Text, Alert } from 'react-native';
+import { TouchableOpacity, View, StyleSheet, Text, Alert, Dimensions } from 'react-native';
 import { CameraView, useCameraPermissions, CameraCapturedPicture } from 'expo-camera';
 import { useRouter } from 'expo-router';
 
 export default function CameraComponent() {
     const [permission, requestPermission] = useCameraPermissions();
-    const cameraRef = useRef<CameraView | null>(null); // CameraView reference
+    const cameraRef = useRef<CameraView | null>(null);
     const [photoUri, setPhotoUri] = useState<string | null>(null);
     const [isCameraReady, setIsCameraReady] = useState(false);
     const router = useRouter();
+    const screenHeight = Dimensions.get('window').height;
+    const screenWidth = Dimensions.get('window').width;
+    const screenAspectRatio = screenHeight / screenWidth;
 
     useEffect(() => {
         if (!permission?.granted) {
@@ -28,15 +31,17 @@ export default function CameraComponent() {
                 setPhotoUri(photo.uri);
 
                 router.push({
-                    pathname: '/IdentifyPicture', params: {
-                        uri: photo.uri,
-                    }
+                    pathname: '/IdentifyPicture',
+                    params: { uri: photo.uri }
                 });
             } else {
                 Alert.alert('Error', 'Camera reference is not available.');
             }
         } catch (error) {
-            Alert.alert('Error', `Failed to take photo: ${error instanceof Error ? error.message : 'Unknown error'}`);
+            Alert.alert(
+                'Error',
+                `Failed to take photo: ${error instanceof Error ? error.message : 'Unknown error'}`
+            );
         }
     };
 
@@ -67,7 +72,7 @@ const styles = StyleSheet.create({
     },
     camera: {
         flex: 2,
-        aspectRatio: 3 / 4,
+        aspectRatio: 1,
         overflow: 'hidden',
     },
     controls: {
@@ -93,5 +98,4 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         backgroundColor: '#FFF8F0',
     },
-
 });
