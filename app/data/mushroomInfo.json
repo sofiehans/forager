@@ -1,0 +1,50 @@
+[
+    {
+        "name": "agaricus",
+        "description": "Agaricus is a widespread genus of mushrooms found across temperate regions, thriving in fields, meadows, and woodlands. Common names include button mushroom, field mushroom, horse mushroom, and prince mushroom. Many species—such as Agaricus bisporus and Agaricus campestris—are edible and widely cultivated, while others like Agaricus xanthodermus (yellow stainer) are toxic, causing gastrointestinal distress. Proper identification is essential, as toxic species can closely resemble edible ones"
+    },
+    {
+        "name": "amanita",
+        "description": "Amanita is a globally distributed genus known for its dramatic appearance and potent toxicity. Common names include fly agaric, death cap, destroying angel, Caesar’s mushroom, and blusher. Native to woodlands across Europe, Asia, Africa, and the Americas, Amanitas often form symbiotic relationships with trees. While some species like Amanita caesarea and Amanita rubescens are edible and culturally prized, many others—such as Amanita phalloides and Amanita virosa—are deadly poisonous, responsible for the majority of fatal mushroom poisonings worldwide. Extreme caution is required when identifying this genus."
+    },
+    {
+        "name": "boletus",
+        "description": "Boletus is a large genus of mushrooms known for their thick stems and sponge-like pores instead of gills. Common names include porcini, king bolete, penny bun, and cep, depending on the region. Native to temperate forests across Europe, North America, and Asia, Boletus species form symbiotic relationships with trees like pine, spruce, and birch. Many, such as Boletus edulis, are highly prized edibles with rich, nutty flavor and culinary versatility, while others—like Boletus satanas—are toxic and can cause severe gastrointestinal distress, making careful identification essential before consumption."
+    },
+    {
+        "name": "cortinarius",
+        "description": "Cortinarius is a massive and globally distributed genus of mushrooms, often referred to by common names like webcaps or cortinars due to the cobweb-like veil (cortina) that covers their gills when young. Found primarily in temperate forests across Europe, North America, and Australia, these mushrooms form symbiotic relationships with trees through mycorrhizal networks. While a few species such as Cortinarius caperatus (gypsy mushroom) are edible and even prized in some regions, the genus is notorious for containing highly toxic varieties like Cortinarius orellanus and Cortinarius rubellus, which can cause severe kidney damage or be fatal. Because many species look deceptively similar, experts strongly advise against consuming any Cortinarius mushrooms unless identification is absolutely certain"
+    },
+    {
+        "name": "entoloma",
+        "description": "Entoloma is a large and diverse genus of mushrooms commonly known as pinkgills, named for their salmon-pink spore prints. Found worldwide, especially in temperate forests and grasslands, these fungi range from delicate to robust and often feature angular spores and gills attached to the stem. While a few species like Entoloma abortivum (also called shrimp of the woods or hunter’s heart) are considered edible in their parasitized form, the genus is notorious for containing many toxic varieties, including Entoloma sinuatum and Entoloma rhodopolium, which can cause severe gastrointestinal distress. Due to their variability and resemblance to edible mushrooms, Entolomas are generally regarded as potentially dangerous and best avoided unless expertly identified."
+    },
+    {
+        "name": "exidia",
+        "description": "Exidia is a genus of jelly-like fungi commonly found on dead hardwoods in temperate forests across North America, Europe, and Asia. Species like Exidia recisa are known by names such as amber jelly roll, willow brain, or witch’s butter, and typically appear as gelatinous, lobed masses on fallen branches, especially willow and oak. While some Exidia species are considered edible, they’re generally bland and insubstantial, and others have uncertain or dubious edibility, making them better admired than consumed."
+    },
+    {
+        "name": "hygrocybe",
+        "description": "Hygrocybe is a vibrant genus of mushrooms commonly known as waxcaps or waxy caps, named for their smooth, often shiny and waxy-looking caps. Found in temperate forests and grasslands across Europe, North America, Asia, and Australia, these mushrooms are known for their striking colors—reds, yellows, oranges, and even greens—and their ecological role as biotrophs, forming symbiotic relationships with plants or mosses. While a few species like Hygrocybe cantharellus and Hygrocybe conica are sometimes considered edible, most are either too small, too insubstantial, or of uncertain safety to be worth collecting, and some have been linked to mild toxicity."
+    },
+    {
+        "name": "inocybe",
+        "description": "Inocybe is a large and complex genus of mushrooms commonly referred to as fiber caps or webcaps, named for their fibrous, often conical caps and cobweb-like veils. Found in temperate forests worldwide, these fungi are mycorrhizal, forming symbiotic relationships with trees like oak, beech, and pine. While a few species such as Inocybe aeruginascens and Inocybe corydalina are known for psychoactive properties, and others like Inocybe dulcamara are considered edible by some experts, the vast majority—including Inocybe rimosa and Inocybe geophylla—are highly toxic, often containing muscarine, a compound that can cause severe or fatal poisoning. Due to their subtle differences and microscopic identification requirements, Inocybes are generally considered unsafe for consumption and best left to experienced mycologists."
+    },
+    {
+        "name": "lactarius",
+        "description": "Lactarius is a widespread genus of mushrooms commonly known as milk caps, named for the milky latex they exude when cut or bruised. Found primarily in temperate forests across Europe, North America, Asia, and parts of Africa and Australia, these fungi form symbiotic relationships with trees like pine, birch, and oak. While many species—such as Lactarius deliciosus (saffron milk cap) and Lactarius volemus—are edible and even prized in culinary traditions, others like Lactarius turpis and Lactarius helvus are considered toxic or mildly poisonous, causing gastrointestinal distress. Because some species look similar and latex color can vary, careful identification is essential before consumption."
+    },
+    {
+        "name": "pluteus",
+        "description": "Pluteus is a genus of wood-rotting mushrooms commonly known as shield mushrooms or pinkgills, thanks to their free gills and pink spore prints. Found worldwide, especially in temperate forests, they typically grow on decaying hardwood and sometimes conifer stumps. Species like Pluteus cervinus (deer shield) and Pluteus petasatus are considered edible, though their flavor is often rated as average. However, caution is advised: some species contain psychoactive compounds like psilocybin, while others may cause mild illness, making expert identification essential before consumption."
+    },
+    {
+        "name": "russula",
+        "description": "Russula is a large and colorful genus of mushrooms commonly known as brittlegills, named for their fragile gills that snap like chalk. Found in temperate forests worldwide, they form symbiotic relationships with trees like oak, pine, and birch. While some species—such as Russula cyanoxantha (charcoal burner), Russula virescens, and Russula xerampelina (shrimp russula)—are edible and even prized for their flavor, others like Russula emetica (the sickener) and Russula nobilis can cause gastrointestinal distress. Because of their vast diversity and lookalike species, careful identification is essential before consumption."
+    },
+    {
+        "name": "suilis",
+        "description": "Suillus is a genus of pore-bearing mushrooms commonly known as slippery jacks, named for their often slimy caps when moist. Native to temperate regions of the Northern Hemisphere, Suillus species form symbiotic relationships with coniferous trees, especially pines and larches. Many are edible—such as Suillus luteus and Suillus americanus—and are highly prized in Eastern European cuisines, though their slimy texture leads some foragers to peel the caps before cooking. However, a few species may cause gastrointestinal upset if not properly prepared, and some are considered of low culinary quality. Proper identification and preparation are key to enjoying these mushrooms safely."
+    }
+]
