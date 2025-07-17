@@ -24,7 +24,7 @@ export default function RootLayout() {
               headerStyle: {
                 backgroundColor: '#1D3836',
               },
-              headerTintColor: '#FFF8F0',
+              headerTintColor: '#F0E3CE',
             }}
           />
           <Stack.Screen
@@ -34,7 +34,7 @@ export default function RootLayout() {
               headerStyle: {
                 backgroundColor: '#1D3836',
               },
-              headerTintColor: '#FFF8F0',
+              headerTintColor: '#F0E3CE',
             }}
 
           />

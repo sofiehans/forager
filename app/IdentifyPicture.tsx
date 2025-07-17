@@ -23,13 +23,14 @@ export default function IdentifyPicture() {
     }, []);
 
     useEffect(() => {
-        if (pred !== null && confidence !== null) {
+        if (pred && confidence && safeUri) {
             console.log('Both values ready:', pred, confidence);
             router.push({
                 pathname: '/InformationScreen',
                 params: {
                     prediction: pred,
                     confidence: confidence.toString(),
+                    imageUri: safeUri
                 },
             });
         }

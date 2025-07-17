@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         height: 80,
         borderRadius: 40,
         borderWidth: 5,
-        borderColor: '#FFF8F0',
+        borderColor: '#F0E3CE',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#000',
@@ -96,6 +96,6 @@ const styles = StyleSheet.create({
         width: 60,
         height: 60,
         borderRadius: 30,
-        backgroundColor: '#FFF8F0',
+        backgroundColor: '#F0E3CE',
     },
 });
