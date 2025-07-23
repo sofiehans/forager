@@ -28,7 +28,7 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen
-            name="IdentifyPicture"
+            name="IdentifyPictureScreen"
             options={{
               headerTitle: '',
               headerStyle: {

@@ -31,7 +31,7 @@ export default function CameraComponent() {
                 setPhotoUri(photo.uri);
 
                 router.push({
-                    pathname: '/IdentifyPicture',
+                    pathname: '/IdentifyPictureScreen',
                     params: { uri: photo.uri }
                 });
             } else {

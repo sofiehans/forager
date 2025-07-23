@@ -5,7 +5,7 @@ import { ActivityIndicator } from 'react-native';
 import { useRouter } from 'expo-router';
 
 
-export default function IdentifyPicture() {
+export default function IdentifyPictureScreen() {
     const { uri } = useLocalSearchParams();
     const safeUri = Array.isArray(uri) ? uri[0] : uri;
     const [pred, setPred] = useState<string | null>(null);
