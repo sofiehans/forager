@@ -2,6 +2,7 @@ import React from 'react';
 import { registerRootComponent } from 'expo';
 import MainScreen from './MainScreen';
 
+// Start at MainScreen
 const App = () => <MainScreen />;
 
 registerRootComponent(App);

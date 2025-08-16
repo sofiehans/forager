@@ -1,35 +1,35 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { TouchableOpacity, View, StyleSheet, Text, Alert, Dimensions } from 'react-native';
+import { TouchableOpacity, View, StyleSheet, Text, Alert } from 'react-native';
 import { CameraView, useCameraPermissions, CameraCapturedPicture } from 'expo-camera';
 import { useRouter } from 'expo-router';
 
 export default function CameraComponent() {
     const [permission, requestPermission] = useCameraPermissions();
     const cameraRef = useRef<CameraView | null>(null);
-    const [photoUri, setPhotoUri] = useState<string | null>(null);
     const [isCameraReady, setIsCameraReady] = useState(false);
     const router = useRouter();
-    const screenHeight = Dimensions.get('window').height;
-    const screenWidth = Dimensions.get('window').width;
-    const screenAspectRatio = screenHeight / screenWidth;
 
+    // Check camera permissions
     useEffect(() => {
         if (!permission?.granted) {
             requestPermission();
         }
     }, [permission]);
 
+    // User has taken a photo
     const takePhoto = async () => {
         try {
+            // Make sure camera is ready
             if (!isCameraReady) {
                 Alert.alert('Error', 'Camera is not ready yet.');
                 return;
             }
 
             if (cameraRef.current) {
+                // Take picture
                 const photo: CameraCapturedPicture = await cameraRef.current.takePictureAsync();
-                setPhotoUri(photo.uri);
 
+                // Push to next screen with the taken photo
                 router.push({
                     pathname: '/IdentifyPictureScreen',
                     params: { uri: photo.uri }

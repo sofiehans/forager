@@ -13,10 +13,13 @@ export default function InformationScreen() {
     const parsedConfidence = Number(confidence);
     const percentConf = (parsedConfidence * 100).toFixed(2);
     const router = useRouter();
+    // Get the information for each mushroom class
     const { mushrooms } = useMushroomData();
 
+    // Obtain information about predicted mushroom class
     const mushroom = mushrooms.find(m => m.name === (prediction as string).toLowerCase());
 
+    // User pressed Take Another Photo button
     const backToHome = () => {
         router.push('/');
     }
@@ -72,7 +75,7 @@ const styles = StyleSheet.create({
     },
     card: {
         height: 600,
-        backgroundColor: '#F0E3CE',
+        backgroundColor: '#FFF8F0',
         borderRadius: 12,
         padding: 16,
         elevation: 4,

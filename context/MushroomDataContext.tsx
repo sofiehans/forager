@@ -12,6 +12,7 @@ type MushroomContextType = {
 
 const MushroomDataContext = createContext<MushroomContextType | undefined>(undefined);
 
+// Load in the mushroom data from mushroomInfo.json and store for later use
 export const MushroomDataProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <MushroomDataContext.Provider value={{ mushrooms: mushroomInfo }}>

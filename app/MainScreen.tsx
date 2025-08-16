@@ -1,14 +1,13 @@
 import Button from '@/components/Button';
-import { Text, View, StyleSheet, Alert } from 'react-native';
+import { View, StyleSheet, Alert } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-// import CameraComponent from '@/components/CameraComponent';
-import { SourceTextModule } from 'vm';
-import { Link, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
 
 export default function Index() {
     const router = useRouter();
 
+    // Check if this is the first time being downloaded - show warning if yes
     useEffect(() => {
         const checkFirstLaunch = async () => {
             try {
@@ -26,16 +25,12 @@ export default function Index() {
         checkFirstLaunch();
     }, []);
 
-    //REMOVE AFTER DEVOLOPMENT
-    const resetLaunchFlag = async () => {
-        await AsyncStorage.removeItem('hasLaunched');
-        alert('Launch flag reset — restart app to test!');
-    };
-
+    // User pressed Identify button
     const identify = () => {
         router.push('/CameraScreen');
     }
 
+    // User pressed History button
     const history = () => {
         //TODO: Implement history viewing
         Alert.alert(
@@ -47,15 +42,9 @@ export default function Index() {
     return (
         <View style={styles.container}>
             <View >
+                {/*Use custom ButtonComponent*/}
                 <Button imageSource={require('../assets/images/identify.png')} onPress={identify} style={{ marginBottom: 30 }} />
                 <Button imageSource={require('../assets/images/history.png')} onPress={history} />
-
-                {/* REMOVE AFTER DEVOLOPMENT */}
-                <View style={{ marginTop: 20 }}>
-                    <Button onPress={resetLaunchFlag} style={{ width: 60, height: 60, backgroundColor: '#FF0000' }} />
-                </View>
-                {/* ################# */}
-
             </View>
         </View>
     );

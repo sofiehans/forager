@@ -10,10 +10,11 @@ export default function IdentifyPictureScreen() {
     const safeUri = Array.isArray(uri) ? uri[0] : uri;
     const [pred, setPred] = useState<string | null>(null);
     const [confidence, setConfidence] = useState<number | null>(null);
-    const [loading, setLoading] = useState(true); // Start as true
+    const [loading, setLoading] = useState(true);
     const router = useRouter();
 
 
+    // Send the photo that was handed to this screen to the server
     useEffect(() => {
         const runInference = async () => {
             await sendToServer(safeUri);
@@ -22,6 +23,7 @@ export default function IdentifyPictureScreen() {
         runInference();
     }, []);
 
+    // Push to next screen once we have values from the server
     useEffect(() => {
         if (pred && confidence && safeUri) {
             console.log('Both values ready:', pred, confidence);
@@ -38,6 +40,7 @@ export default function IdentifyPictureScreen() {
 
 
     const sendToServer = async (imageUri: string) => {
+        // Commence loading screen while server predicts
         setLoading(true);
         const formData = new FormData();
         // Append to formData
@@ -49,7 +52,8 @@ export default function IdentifyPictureScreen() {
 
         try {
             console.log("Sending request...")
-            const response = await fetch('http://192.168.2.151:5000/infer', {
+            // Send image to server
+            const response = await fetch('http://localhost:5000/infer', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'multipart/form-data',
@@ -57,11 +61,15 @@ export default function IdentifyPictureScreen() {
                 body: formData,
             });
 
+            // Await server response
             const result = await response.json();
+
             // Update prediction and confidence
             setPred(result.class);
             setConfidence(result.confidence);
-            setLoading(false); // Hide loader when don
+
+            // Hide loading screen when done
+            setLoading(false);
 
         } catch (error) {
             console.error('Upload failed:', error);
@@ -79,7 +87,7 @@ export default function IdentifyPictureScreen() {
             {loading && (
                 <View style={styles.overlay}>
                     <ActivityIndicator size="large" color="#ffffff" />
-                    <Text style={styles.loadingText}>Identifying object...</Text>
+                    <Text style={styles.loadingText}>Identifying mushroom...</Text>
                 </View>
             )}
 
